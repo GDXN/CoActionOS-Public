@@ -1,0 +1,222 @@
+/*
+ * Nhdc12864.cpp
+ *
+ *  Created on: May 14, 2013
+ *      Author: tgil
+ */
+
+#include <cstdio>
+#include <applib/Timer.hpp>
+#include "Nhdc240128.hpp"
+
+#include "bus_table.h"
+
+
+
+
+Nhdc240128::Nhdc240128(uint8_t pio_port,
+		uint8_t cs_port, uint32_t cs_pin,
+		uint8_t rd_port, uint32_t rd_pin,
+		uint8_t wr_port, uint32_t wr_pin,
+		uint8_t data_cmd_port, uint32_t data_cmd_pin,
+		uint8_t rst_port, uint32_t rst_pin,
+		uint8_t pwm_port, uint8_t pwm_chan, uint8_t pwm_pinassign) :
+		MLcd(240, 128),
+		data(pio_port),
+		cs(cs_port, cs_pin),
+		rd(rd_port, rd_pin),
+		wr(wr_port, wr_pin),
+		data_cmd(data_cmd_port, data_cmd_pin),
+		rst(rst_port, rst_pin),
+		pwm(pwm_port), pwm_chan(pwm_chan), pwm_pinassign(pwm_pinassign) {
+}
+
+int Nhdc240128::init(){
+	//This is the startup sequence specified by the manufacturer
+	//const char start[] = {0xA0, 0xAE, 0xC0, 0xA2, 0x2F, 0x26, 0x81, 0x11, 0xAF};
+
+	/*
+	//initialize PWM channel for brightness control
+	if( pwm.init(1<<pwm_chan, 10000000, 1000, 0, pwm_pinassign) < 0 ){
+		return -1;
+	}
+
+	if( pwm.set(pwm_chan, 0) < 0 ){
+		return -1;
+	}
+	 */
+
+
+	cs.init(PIO_MODE_OUTPUT);
+	cs.set();
+	rd.init(PIO_MODE_OUTPUT);
+	rd.set();
+	wr.init(PIO_MODE_OUTPUT);
+	wr.set();
+	data_cmd.init(PIO_MODE_OUTPUT);
+	data_cmd.set();
+	rst.init(PIO_MODE_OUTPUT);
+	rst.set();
+
+	//initialize data lines
+	rst.clr();
+	Timer::wait_msec(10);
+	rst.set();
+	Timer::wait_msec(10);
+	data_cmd = true;
+	data.init(bus_mask, PIO_MODE_OUTPUT);
+	data_out(0x00);
+	data_out(0x00);
+	cmd_out(0x40);
+	data_out(0x00);
+	data_out(0x40);
+	cmd_out(0x42);
+	data_out(0x1E);
+	data_out(0x00);
+	cmd_out(0x41);
+	data_out(0x1E);
+	data_out(0x00);
+	cmd_out(0x43);
+	cmd_out(0x80);
+
+	cmd_out(0x98);
+	clear();
+	refresh();
+	return 0;
+}
+
+void Nhdc240128::clear(void){
+	memset(nhd_mem, 0, MEM_ROWS*MEM_COLUMNS);
+}
+
+void * Nhdc240128::mem(){
+	return nhd_mem;
+}
+
+bool Nhdc240128::tstpixel(unsigned int x, unsigned int y){
+	int x_off = x>>3;
+	if( (x < width_var) && (y < height_var)){
+		return nhd_mem[ymax()-y][x_off] & 0x80>>(x&0x07);
+	}
+	return true;
+}
+
+
+void Nhdc240128::setpixel(unsigned int x, unsigned int y){
+	int x_off = x>>3;
+	if( (x < width_var) && (y < height_var)){
+		nhd_mem[ymax()-y][x_off] |= 0x80>>(x&0x07);
+	}
+}
+
+void Nhdc240128::clrpixel(unsigned int x, unsigned int y){
+	int x_off = x>>3;
+	if( (x < width_var) && (y < height_var)){
+		nhd_mem[ymax()-y][x_off] &= ~(0x80>>(x&0x07));
+	}
+}
+
+bool Nhdc240128::tstpixel_bounded(unsigned int x, unsigned int y){
+	int x_off = x>>3;
+	return nhd_mem[ymax()-y][x_off] & 0x80>>(x&0x07);
+}
+
+
+void Nhdc240128::setpixel_bounded(unsigned int x, unsigned int y){
+	int x_off = x>>3;
+	nhd_mem[ymax()-y][x_off] |= 0x80>>(x&0x07);
+}
+
+void Nhdc240128::clrpixel_bounded(unsigned int x, unsigned int y){
+	int x_off = x>>3;
+	nhd_mem[ymax()-y][x_off] &= ~(0x80>>(x&0x07));
+}
+
+void Nhdc240128::setbrightness(int value, int max){
+	Pwm pwm(1);
+	pwm_duty_t duty;
+	duty = (pwm_duty_t)(value * 1000 / max);
+	pwm.set(pwm_chan, duty);
+}
+
+void Nhdc240128::refresh(void){
+	int i;
+	int j;
+	int p;
+	data_out(0x00);
+	data_out(0x40);
+	cmd_out(0x24);
+	cmd_out(0xB0);
+	assert_data();
+	assert_cs();
+	//for(i=MEM_ROWS-1; i >= 0; i--){
+	for(i=0; i < MEM_ROWS; i++){
+		for(j=0; j < MEM_COLUMNS; j++){
+			this->data.set(bus_table[ nhd_mem[i][j] ] | (1<<19));
+			wr = false;
+			p++;
+			wr = true;
+		}
+	}
+	deassert_cs();	cmd_out(0xB2);
+}
+
+void Nhdc240128::assert_cs(void){
+	cs = false;
+	Timer::wait_usec(200);
+}
+void Nhdc240128::deassert_cs(void){
+	cs = true;
+}
+
+void Nhdc240128::assert_cmd(void){
+	data_cmd = true;
+}
+void Nhdc240128::assert_data(void){
+	data_cmd = false;
+}
+
+void Nhdc240128::data_out(const void * data, int nbyte){
+	int i;
+	const unsigned char * p = (const unsigned char*)data;
+	assert_data();
+	assert_cs();
+	for(i=0; i < nbyte; i++){
+		this->data.set(bus_table[*p] | (1<<19));
+		wr = false;
+		p++;
+		wr = true;
+	}
+	deassert_cs();
+
+}
+
+void Nhdc240128::data_out(unsigned char c){
+	assert_data();
+	wr = false;
+	data.set(bus_table[c] | (1<<19));
+	assert_cs();
+	wr = true;
+	deassert_cs();
+}
+
+void Nhdc240128::cmd_out(unsigned char c){
+	assert_cmd();
+	wr = false;
+	assert_cs();
+	data.set(bus_table[c] | (1<<19));
+	wr = true;
+	deassert_cs();
+}
+
+void Nhdc240128::cmd_out(const void * cmd, int nbyte){
+	int i;
+	const unsigned char * p = (const unsigned char*)cmd;
+	assert_cmd();
+	for(i=0; i < nbyte; i++){
+		assert_cs();
+		//spi.swap(*p++);
+		deassert_cs();
+		Timer::wait_usec(50);
+	}
+}

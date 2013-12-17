@@ -1,3 +1,6 @@
 CoActionOS/Release_*
 CoActionOS/doc/html
 CoActionOS/script/publish.sh
+CoActionOS-Applib/Release_*
+CoActionOS-Applib/doc/html
+
