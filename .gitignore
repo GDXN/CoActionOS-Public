@@ -1,3 +1,3 @@
-Release_*
-doc/html
-script/publish.sh
+CoActionOS/Release_*
+CoActionOS/doc/html
+CoActionOS/script/publish.sh
