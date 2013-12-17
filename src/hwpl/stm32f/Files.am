@@ -1,0 +1,36 @@
+
+
+STM32F_CORE_FILES = ../../core_cm3/priv.c \
+	../../core_cm3/core_cm3.c \
+	../../core_cm3/task_single.c \
+	../../core_cm3/fault.c
+		
+STM32F_SHARE_FILES = ../../share/adc.c \
+	../../share/core.c \
+	../../share/gpio.c \
+	../../share/eint.c \
+	../../share/spi.c \
+	../../share/pio.c \
+	../../share/rtc.c \
+	../../share/tmr.c \
+	../../share/uart.c
+	
+STM32F_FILES = ../core_startup.c \
+	../core_set_pinsel_func.c \
+	../core_setclock_internal.c \
+	../adc_dev.c \
+	../core_dev.c \
+	../gpio_dev_min.c \
+	../gpio_dev.c \
+	../eint_dev.c \
+	../pio_dev.c \
+	../gpio_flags.h \
+	../pio_flags.h \
+	../hwpl_dev.c \
+	../spi_dev.c \
+	../rtc_dev.c \
+	../tmr_dev.c \
+	../uart_dev.c \
+	${STM32F_SHARE_FILES} ${STM32F_CORE_FILES}
+	
+	

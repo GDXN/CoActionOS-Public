@@ -1,0 +1,17 @@
+
+
+In the CoActionOS directory, type
+
+./autogen.sh
+
+This will create the "build-lpc17xx" and "build-link" directories and configure the builds.
+
+To build and install for the lpc17xx, type:
+
+cd build-lpc17xx
+make
+sudo make install
+
+Note that "sudo" is not necessary for MinGW (windows)
+
+
