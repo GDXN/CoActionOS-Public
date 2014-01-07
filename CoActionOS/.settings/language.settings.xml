@@ -28,7 +28,7 @@
 						<entry kind="macro" name="__link" value=""/>
 						<entry kind="macro" name="__macosx" value=""/>
 					</resource>
-					<resource project-relative-path="src/link/link_process.c">
+					<resource project-relative-path="src/hwpl/share/link_protocol_slave.c">
 						<entry kind="includePath" name="/${ProjName}/include">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -40,7 +40,7 @@
 						<entry kind="macro" name="__link" value=""/>
 						<entry kind="macro" name="__macosx" value=""/>
 					</resource>
-					<resource project-relative-path="src/hwpl/share/link_protocol_slave.c">
+					<resource project-relative-path="src/link/link_process.c">
 						<entry kind="includePath" name="/${ProjName}/include">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>

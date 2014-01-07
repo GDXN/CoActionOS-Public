@@ -6,7 +6,7 @@
  *
  * This is the CoActionOS Applib API documentation.  This is recommended for users that are writing
  * CoActionOS applications.  If you want to write device drivers or tweak the kernel, please see the
- * <a href="/projects/coactionos/embedded/index.html">CoActionOS API documentation</a>.
+ * <a href="../../coactionos/html/">CoActionOS API documentation</a>.
  *
  * \section INTRO Introduction
  *

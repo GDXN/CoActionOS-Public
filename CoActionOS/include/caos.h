@@ -11,7 +11,7 @@
  *
  * This is the CoActionOS API documentation.  This is recommended for users looking to write device
  * drivers or tweak the kernel.  If you are writing applications, see the
- * <a href="/redmine/projects/coactionos-applib/embedded/index.html">CoActionOS Applib API documentation</a>.
+ * <a href="../../coactionos-applib/html/">CoActionOS Applib API documentation</a>.
  *
  *
  * \subsection API POSIX API

@@ -211,7 +211,7 @@ uint32_t usb_dev_std_req_getdesc(void) {
 				if ( ptr.cstr->bString == NULL ){
 					//generate the string from the device serial number
 					ptr.u8 = usb_dev_std_ep0_buf;
-					ptr.str->bLength = 32*2;
+					ptr.str->bLength = 32*2 + 2;
 					ptr.str->bDescriptorType = 3;
 					usb_dev_std_get_serialno( &(ptr.str->bString) );
 					len = ptr.str->bLength;

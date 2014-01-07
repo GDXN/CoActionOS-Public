@@ -21,11 +21,10 @@ static inline void usb_clr_stall_ep(int port, uint32_t endpoint_num) HWPL_ALWAYS
 static inline void usb_cfg_ep(int port, void * ep_desc) HWPL_ALWAYS_INLINE;
 static inline void slow_ep_int(int episr) HWPL_ALWAYS_INLINE;
 
-
 #define USB_DEBUG
 
 #ifdef USB_DEBUG
-volatile int usbdev_stat;
+volatile unsigned int usbdev_stat;
 #define USB_DEV_DEBUG(x) (usbdev_stat |= x)
 #else
 #define USB_DEV_DEBUG(x)
@@ -40,7 +39,7 @@ typedef struct {
 	uint8_t connected;
 } usb_local_t;
 
-static usb_local_t usb_local HWPL_SYS_MEM;
+static usb_local_t usb_local;
 
 static void clear_callbacks(void);
 void clear_callbacks(void){
@@ -459,6 +458,7 @@ void _hwpl_core_usb_isr(void){
 	uint32_t device_interrupt_status;
 	uint32_t tmp;
 	int i;
+
 	device_interrupt_status = LPC_USB->DevIntSt;     //Device interrupt status
 
 	USB_DEV_DEBUG(0x01);
@@ -472,9 +472,12 @@ void _hwpl_core_usb_isr(void){
 
 	if (device_interrupt_status & DEV_STAT_INT){ //Status interrupt (Reset, suspend/resume or connect)
 
+
+
 		for(tmp = 0; tmp < 1000000; tmp++){
 			asm volatile("nop\n");
 		}
+
 
 		//usb_sie_wr_cmd(USB_SIE_CMD_GET_DEV_STAT);
 		tmp = usb_sie_rd_cmd_dat(USB_SIE_CMD_GET_DEV_STAT);
@@ -484,11 +487,10 @@ void _hwpl_core_usb_isr(void){
 
 		if (tmp & DEV_RST){
 			//hwpl_usb_reset(0, NULL);
-
 			usb_local.connected = 1;
 			usb_local.write_pending = 0;
 			usb_local.read_ready = 0;
-			if ( usb_local.event_handler ){ usb_local.event_handler(USB_SPEC_EVENT_RESET, 0); }
+			//if ( usb_local.event_handler ){ usb_local.event_handler(USB_SPEC_EVENT_RESET, 0); }
 			USB_DEV_DEBUG(0x04);
 		}
 
@@ -506,7 +508,7 @@ void _hwpl_core_usb_isr(void){
 
 		if (tmp & DEV_CON_CH){
 			if ( usb_local.event_handler ){
-				usb_local.event_handler(USB_SPEC_EVENT_POWER, tmp);
+				//usb_local.event_handler(USB_SPEC_EVENT_POWER, tmp);
 			}
 			USB_DEV_DEBUG(0x10);
 		}
@@ -514,12 +516,12 @@ void _hwpl_core_usb_isr(void){
 		if (tmp & DEV_SUS_CH){
 			if (tmp & DEV_SUS){
 				if ( usb_local.event_handler ){
-					usb_local.event_handler(USB_SPEC_EVENT_SUSPEND, tmp);
+					//usb_local.event_handler(USB_SPEC_EVENT_SUSPEND, tmp);
 				}
 				USB_DEV_DEBUG(0x20);
 			} else {
 				if ( usb_local.event_handler ){
-					usb_local.event_handler(USB_SPEC_EVENT_RESUME, tmp);
+					//usb_local.event_handler(USB_SPEC_EVENT_RESUME, tmp);
 				}
 				USB_DEV_DEBUG(0x40);
 			}
@@ -548,6 +550,7 @@ void slow_ep_int(int episr){
 			//Calculate the logical endpoint value (associated with the USB Spec)
 			log_ep = phy_ep >> 1;
 
+
 			//Clear the interrupt and select the endpoint -- this works differently than the lpc17xx
 			tmp = usb_sie_rd_cmd_dat(USB_SIE_CMD_SEL_EP_CLRI(phy_ep));
 
@@ -557,6 +560,7 @@ void slow_ep_int(int episr){
 
 				//Check for a setup packet
 				if ( (phy_ep == 0) && (tmp & EP_SEL_STP) ){
+					LPC_GPIO1->DATA |= (1<<2);
 					USB_DEV_DEBUG(0x80);
 					if (usb_local.callback[0]){
 						usb_local.callback[0](usb_local.context, (const void*)USB_SETUP_EVENT);

@@ -16,7 +16,7 @@
 int Eint::fd[HWPL_EINT_PORTS];
 bool Eint::isinitialized = false;
 
-Eint::Eint(port_t port) : Pblock(port, NUM_PORTS, (int*)&fd, &isinitialized){}
+Eint::Eint(port_t port) : Periph(port, NUM_PORTS, (int*)&fd, &isinitialized){}
 
 int Eint::open(int flags){
 	return _open(PERIPH_NAME, flags);
