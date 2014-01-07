@@ -1,6 +1,6 @@
 CoActionOS
 ==========
 
-This is the future home of CoActionOS on github.  It will still be a couple of weeks before the code is migrated from SVN to git, but when that happens this will be the place to get the CoActionOS source code.
+This is the new home of CoActionOS.  Previously, CoActionOS has been managed using an SVN repository.  To encourage more user involvement, the project has been migrated to git and is now hosted here on Github.
 
-More coming soon :)
+Please see the [homepage](http://coactionos.com) for more details.
