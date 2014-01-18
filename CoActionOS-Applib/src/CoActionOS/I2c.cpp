@@ -34,3 +34,31 @@ int I2c::geterr(void){
 	return ioctl(I_I2C_GETERR);
 }
 
+
+int I2c::read(int loc, uint8_t & reg){
+	int ret;
+	ret = read(loc, &reg, 1);
+	return ret;
+}
+
+int I2c::write(int loc, uint8_t reg){
+	int ret;
+	ret = write(loc, &reg, 1);
+	return ret;
+}
+
+
+int I2c::set(int loc, int bit, bool high){
+	int ret;
+	uint8_t tmp;
+	ret = read(loc, tmp);
+	if( ret < 0 ){
+		return ret;
+	}
+	if ( high == true ){
+		tmp |= (1<<bit);
+	} else {
+		tmp &= ~(1<<bit);
+	}
+	return write(loc, tmp);
+}

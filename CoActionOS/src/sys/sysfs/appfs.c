@@ -13,6 +13,7 @@
 #include "hwpl/task.h"
 #include "hwpl/core.h"
 #include "hwpl/mem.h"
+#include "hwpl/mpu.h"
 #include "appfs_local.h"
 #include "../sched/sched_flags.h"
 
@@ -252,6 +253,7 @@ int appfs_unlink(const void* cfg, const char * path){
 	//this will erase the page associated with the filename -- system files are read-only
 	priv_load_fileinfo_t args;
 	int start_page;
+	int tmp;
 	int end_page;
 	int size_deleted;
 	const char * name;
@@ -295,7 +297,9 @@ int appfs_unlink(const void* cfg, const char * path){
 
 
 	} else {
-		if ( appfs_ram_setusage(args.pageinfo.num, args.fileinfo.exec.code_size, APPFS_MEMPAGETYPE_FREE) < 0 ){
+		//The Ram size is the code size + the data size round up to the next power of 2 to account for memory protection
+		tmp = mpu_getnextpowerof2(args.fileinfo.exec.code_size + args.fileinfo.exec.data_size);
+		if ( appfs_ram_setusage(args.pageinfo.num, tmp, APPFS_MEMPAGETYPE_FREE) < 0 ){
 			return -1;
 		}
 	}

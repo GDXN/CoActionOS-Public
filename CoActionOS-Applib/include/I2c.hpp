@@ -26,6 +26,8 @@ public:
 	/*! \brief Get the last error */
 	int geterr(void);
 
+	inline int err(){ return geterr(); }
+
 #ifdef __HWPL_ONLY__
 	using Pblock::read;
 	using Pblock::write;
@@ -71,10 +73,21 @@ public:
 	using Pblock::read;
 	using Pblock::write;
 
+	/*! \brief Read the value of a register on an I2C device */
 	int read(int loc, uint8_t & reg);
+	/*! \brief Write the value of a register on an I2C device */
 	int write(int loc, uint8_t reg);
 
+	/*! \brief Set (or clear) the bit in a register on an I2C device */
+	/*! \details This sets (or clears) a specific bit in a a register
+	 * on an I2C device
+	 * @param loc The register offset value
+	 * @param bit The bit to set (or clear)
+	 * @param high true to set the bit and false to clear it
+	 * @return Zero on success
+	 */
 	int set(int loc, int bit, bool high = true);
+	/*! \brief Clear the bit in a register on an I2C device */
 	inline int clear(int loc, int bit){ return set(loc, bit, false); }
 
 private:
@@ -90,6 +103,14 @@ private:
 class Iic : public I2c {
 public:
 	Iic(port_t port) : I2c(port){}
+};
+
+/*! \brief I2C Class (alternate class for I2c)
+ *
+ */
+class I2C : public I2c {
+public:
+	I2C(port_t port) : I2c(port){}
 };
 
 #endif /* APPLIB_I2C_HPP_ */

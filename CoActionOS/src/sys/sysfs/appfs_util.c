@@ -431,7 +431,7 @@ int appfs_util_priv_writeinstall(const device_t * dev, appfs_handle_t * h, appfs
 		}
 
 		h->type.install.code_start = (uint32_t)code_start_addr;
-		h->type.install.code_size = src.file->exec.code_size;
+		h->type.install.code_size = code_size;
 		h->type.install.data_start = (uint32_t)data_start_addr;
 		h->type.install.data_size = src.file->exec.data_size;
 
