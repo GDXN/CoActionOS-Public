@@ -66,6 +66,17 @@ public:
 		}
 		return setattr(bitrate, pin_assign);
 	}
+
+
+	using Pblock::read;
+	using Pblock::write;
+
+	int read(int loc, uint8_t & reg);
+	int write(int loc, uint8_t reg);
+
+	int set(int loc, int bit, bool high = true);
+	inline int clear(int loc, int bit){ return set(loc, bit, false); }
+
 private:
 #ifndef __HWPL_ONLY__
 	static int fd[HWPL_I2C_PORTS];
