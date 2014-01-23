@@ -98,9 +98,12 @@ void __div0(void){
 	while(1){}
 }
 
+extern void crt_load_data(void * global_impure, void * code_start, int code_size, int data_size);
+extern char ** const crt_import_argv(int argc, char * const argv[]);
+
 uint32_t const symbols_table[] = {
 		//The first position is the signature
-		(uint32_t)0x00000130,
+		(uint32_t)0x00000132,
 		(uint32_t)__cxa_pure_virtual,
 		(uint32_t)__get_PSP,
 		(uint32_t)__set_PSP,
@@ -652,7 +655,7 @@ uint32_t const symbols_table[] = {
 		(unsigned int)siprintf,
 		(unsigned int)viprintf,
 		(unsigned int)vsniprintf,
-		(unsigned int)vsiprintf, // THis needs to have the rest of the float functions defined as 0 -- installer won't install the program
+		(unsigned int)vsiprintf, // This needs to have the rest of the float functions defined as 0 -- installer won't install the program
 		0,
 		0,
 		0,
@@ -774,5 +777,8 @@ uint32_t const symbols_table[] = {
 #endif
 		(uint32_t)signal_callback,
 		(uint32_t)__sinit,
+		(uint32_t)task_setstackguard,
+		(uint32_t)crt_import_argv,
+		(uint32_t)crt_load_data,
 		0
 };

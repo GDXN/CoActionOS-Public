@@ -1,4 +1,4 @@
-.global _signature; _signature = 0x00000130;
+.global _signature; _signature = 0x00000132;
 .global __cxa_pure_virtual; __cxa_pure_virtual = 0xDEFF8005;
 .global __get_PSP; __get_PSP = 0xDEFF8009;
 .global __set_PSP; __set_PSP = 0xDEFF800D;
@@ -543,3 +543,6 @@
 .global __powidf2; __powidf2 = 0xDEFF87C1;
 .global signal_callback; signal_callback = 0xDEFF87C5;
 .global __sinit; __sinit = 0xDEFF87C9;
+.global task_setstackguard; task_setstackguard = 0xDEFF87CD;
+.global crt_import_argv; crt_import_argv = 0xDEFF87D1;
+.global crt_load_data; crt_load_data = 0xDEFF87D5;

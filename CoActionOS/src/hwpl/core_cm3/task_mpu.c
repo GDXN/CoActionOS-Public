@@ -63,7 +63,6 @@ int task_setstackguard(int tid, void * stackaddr, int stacksize){
 	return arg.tid;
 }
 
-
 int task_priv_set_stackguard(int tid, void * stackaddr, int stacksize){
 	int err;
 	uint32_t newaddr;

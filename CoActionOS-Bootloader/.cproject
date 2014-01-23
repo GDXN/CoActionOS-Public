@@ -11,8 +11,8 @@
 					<stringMacro name="USBPID" type="VALUE_TEXT" value="0x41D5"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="1"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TRANSFER_BUFFER_SIZE" type="VALUE_TEXT" value="1024"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS\bin"/>
@@ -31,8 +31,8 @@
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="DEVICE" type="VALUE_TEXT" value="lpc1759"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc17xx"/>
-					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
 					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
+					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="TARGET_STARTADDR" type="VALUE_TEXT" value="0x40000"/>
 				</macros>
@@ -108,7 +108,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry excluding="usb_dev_defs.h|usb_dev_setup.c|usb_dev_std_inline.h|usb_dev_std.h|usb_dev_typedefs.h" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -122,8 +122,8 @@
 					<stringMacro name="USBPID" type="VALUE_TEXT" value="0x413C"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="1"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="1"/>
 					<stringMacro name="TRANSFER_BUFFER_SIZE" type="VALUE_TEXT" value="1024"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS\bin"/>
@@ -142,8 +142,8 @@
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="DEVICE" type="VALUE_TEXT" value="lpc1769"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc17xx"/>
-					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
+					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="TARGET_STARTADDR" type="VALUE_TEXT" value="0x40000"/>
 				</macros>
@@ -232,8 +232,8 @@
 					<stringMacro name="USBPID" type="VALUE_TEXT" value="0x41D5"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="0"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="0"/>
 					<stringMacro name="TRANSFER_BUFFER_SIZE" type="VALUE_TEXT" value="1024"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS\bin"/>
@@ -252,8 +252,8 @@
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="DEVICE" type="VALUE_TEXT" value="lpc1788"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc177x_8x"/>
-					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
+					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="TARGET_STARTADDR" type="VALUE_TEXT" value="0x40000"/>
 				</macros>

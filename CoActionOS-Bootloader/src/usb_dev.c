@@ -10,7 +10,7 @@
 #include <hwpl/debug.h>
 
 #include "usb_dev.h"
-#include "usb_dev_std.h"
+#include <usb_dev_std.h>
 
 
 int default_req(int event);
@@ -38,7 +38,8 @@ const void * usb_cfg_descriptor = NULL;
 const void * usb_string_descriptor = NULL;
 
 //This must be below the above variable definitions
-#include "usb_dev_std_inline.h"
+#define USB_DEV_PORT USBDEV_PORT
+#include <usb_dev_std_inline.h>
 
 static void stall(void){
 	hwpl_usb_stallep(USBDEV_PORT, (void*)(USB_ENDPOINT_IN|0x00));

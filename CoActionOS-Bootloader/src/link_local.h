@@ -11,7 +11,9 @@
 #include <stddef.h>
 
 #include "usb_dev.h"
-#include "usb_dev_std_inline.h"
+
+#define USB_DEV_PORT USBDEV_PORT
+#include <usb_dev_std_inline.h>
 
 int link_phyopen(void);
 int link_phyread(void *buf, int nbyte);

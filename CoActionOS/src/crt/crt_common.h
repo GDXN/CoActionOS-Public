@@ -29,5 +29,7 @@ extern uint32_t _app_ram_size;
 int crt_common(int argc, char * const argv[], int * ret, const char * name);
 void crt_exit(int exit_code);
 
+void crt_load_data(void * global_impure, void * code_start, int code_size, int data_size);
+char ** const crt_import_argv(int argc, char * const argv[]);
 
 #endif /* CRT_COMMON_H_ */

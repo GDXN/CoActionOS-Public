@@ -7,8 +7,6 @@
 
 extern uint32_t _signature;
 
-extern void hwpl_core_privcall(void (*call)(void*), void * args) __attribute__((optimize("0")));
-static void priv_load_data(void * args);
 void crt(int argc, char * const argv[]);
 
 extern struct _reent global_impure_data __attribute__((section(".global_reent")));
@@ -35,8 +33,8 @@ void crt(int argc, char * const argv[]){
 	int ret;
 
 	//Copy the heap to RAM -- since the heap copy is in no man's land this needs to be privileged
-	hwpl_core_privcall(priv_load_data, NULL);
-
+	//hwpl_core_privcall(priv_load_data, NULL);
+	crt_load_data(&global_impure_data, startup_data.exec.code_start, startup_data.exec.code_size, startup_data.exec.data_size);
 
 	if ( crt_common(argc, argv, &ret, startup_data.hdr.name) != 0 ){
 		ret = -1;
@@ -45,10 +43,3 @@ void crt(int argc, char * const argv[]){
 	exit(ret);
 }
 
-
-void priv_load_data(void * args){
-	//don't use &_etext -- it has a bug when the binary is 32768 or 65536
-	memcpy(&global_impure_data,
-			startup_data.exec.code_start + startup_data.exec.code_size,
-			(int)startup_data.exec.data_size );
-}

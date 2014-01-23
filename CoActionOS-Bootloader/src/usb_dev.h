@@ -83,6 +83,7 @@ void usb_dev_deassert_connect(void){
 void usb_feature_event(void);
 void usb_configure_event(void);
 void usb_interface_event(void);
+void usb_dev_std_setup_stage(void);
 
 
 #endif /* USB_DEVICE_H_ */
