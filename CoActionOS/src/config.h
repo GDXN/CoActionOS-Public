@@ -13,6 +13,8 @@
 
 /*! @} */
 
+#include <stdint.h>
+
 #ifdef __lpc17xx
 #define ARCH "lpc17xx"
 #define CAOSLIB_USECOND_TMR_RESET_OC 0
@@ -55,6 +57,5 @@
 #define DEVICE_MAX_RAM 65536
 #define DEVICE_SYS_RAM 4096
 #define DEVICE_RAM_PAGE_SIZE 1024
-
 
 #endif

@@ -11,8 +11,8 @@
 					<stringMacro name="USBPID" type="VALUE_TEXT" value="0x41D5"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="1"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="1"/>
 					<stringMacro name="TRANSFER_BUFFER_SIZE" type="VALUE_TEXT" value="1024"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS\bin"/>
@@ -31,8 +31,8 @@
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="DEVICE" type="VALUE_TEXT" value="lpc1759"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc17xx"/>
-					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
+					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="TARGET_STARTADDR" type="VALUE_TEXT" value="0x40000"/>
 				</macros>
@@ -49,7 +49,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.262901993." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1563816576" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.81919210" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${HOST}-" valueType="string"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.447483519" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value=";${TOOLSPATH}" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.447483519" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="${PathDelimiter}${TOOLSPATH}" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.332820140" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder autoBuildTarget="all" buildPath="${workspace_loc:/CoAction-Hero/build}" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.547548386" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1604263445" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
@@ -122,8 +122,8 @@
 					<stringMacro name="USBPID" type="VALUE_TEXT" value="0x413C"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="1"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TRANSFER_BUFFER_SIZE" type="VALUE_TEXT" value="1024"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS\bin"/>
@@ -142,8 +142,8 @@
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="DEVICE" type="VALUE_TEXT" value="lpc1769"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc17xx"/>
-					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
 					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
+					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="TARGET_STARTADDR" type="VALUE_TEXT" value="0x40000"/>
 				</macros>
@@ -232,8 +232,8 @@
 					<stringMacro name="USBPID" type="VALUE_TEXT" value="0x41D5"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="USBDEV_CONNECT_PORT" type="VALUE_TEXT" value="0"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TRANSFER_BUFFER_SIZE" type="VALUE_TEXT" value="1024"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS\bin"/>
@@ -252,8 +252,8 @@
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="DEVICE" type="VALUE_TEXT" value="lpc1788"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc177x_8x"/>
-					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
 					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
+					<stringMacro name="PROGRAM_WAIT_TIME" type="VALUE_TEXT" value="50"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="TARGET_STARTADDR" type="VALUE_TEXT" value="0x40000"/>
 				</macros>
@@ -270,7 +270,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.262901993.625927497." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.747324173" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.484485392" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${HOST}-" valueType="string"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.1997360671" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value=";${TOOLSPATH}" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.1997360671" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="${PathDelimiter}${TOOLSPATH}" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1278570221" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder autoBuildTarget="all" buildPath="${workspace_loc:/CoAction-Hero/build}" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.718765448" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1585468667" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">

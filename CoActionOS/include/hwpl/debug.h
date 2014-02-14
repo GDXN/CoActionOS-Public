@@ -19,7 +19,10 @@ extern "C" {
 #ifndef __link
 
 #define HWPL_DEBUG_PORT 0
+
+#ifndef __HWPL_DEBUG
 #define NO_DEBUG
+#endif
 
 #define HWPL_DEBUG_BUFFER_SIZE 256
 extern char hwpl_debug_buffer[HWPL_DEBUG_BUFFER_SIZE];
