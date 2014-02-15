@@ -73,14 +73,6 @@ int unistd_device_ioctl(open_file_t * open_file, int request, void * ctl){
 	args.request = request;
 	args.ctl = ctl;
 
-#ifdef __SECURE
-	//check to see if root is required for the request
-	if( (args.request & _IOCTL_ROOT) && !sys_isroot() ){
-		errno = EPERM;
-		return -1;
-	}
-#endif
-
 	hwpl_core_privcall(unistd_priv_ioctl, &args);
 	return args.err;
 }
