@@ -23,6 +23,14 @@ environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.releas
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1231350022/C_INCLUDE_PATH/operation=remove
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1231350022/append=true
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1231350022/appendContributed=true
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/CPATH/delimiter=\:
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/CPATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/CPLUS_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/C_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/append=true
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139/appendContributed=true
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1989074358/CPATH/delimiter=\:
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1989074358/CPATH/operation=remove
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1989074358/CPLUS_INCLUDE_PATH/delimiter=\:

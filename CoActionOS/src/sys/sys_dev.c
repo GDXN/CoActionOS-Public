@@ -22,10 +22,15 @@
 extern const char _stdin_dev[];
 extern const char _stdout_dev[];
 
-extern const uint32_t * _hwpl_core_vector_table[];
 extern const int caoslib_system_memory_size;
 
+#ifdef __SECURE
+extern const char sys_key[32];
+#endif
+
 static int read_task(sys_taskattr_t * task);
+
+uint8_t sys_euid HWPL_SYS_MEM;
 
 int sys_open(const device_cfg_t * cfg){
 	return 0;
@@ -34,10 +39,18 @@ int sys_open(const device_cfg_t * cfg){
 int sys_ioctl(const device_cfg_t * cfg, int request, void * ctl){
 	sys_attr_t * sys = ctl;
 	sys_killattr_t * killattr = ctl;
+#ifdef __SECURE
+	sys_sudo_t * passwd = ctl;
+#endif
+
+
 	int i;
 	switch(request){
 	case  I_SYS_GETATTR:
 		strncpy(sys->version, VERSION, 7);
+#ifdef __SECURE
+		strcat(sys->version, "s");
+#endif
 		sys->version[7] = 0;
 		strncpy(sys->arch, ARCH, 7);
 		sys->arch[7] = 0;
@@ -70,6 +83,33 @@ int sys_ioctl(const device_cfg_t * cfg, int request, void * ctl){
 				killattr->si_signo,
 				killattr->si_sigcode,
 				killattr->si_sigvalue, 1);
+#ifdef __SECURE
+	case I_SYS_SUDO:
+		//check for exit SUDO mode
+		if( passwd == 0 ){
+			sys_setuser();
+			return 0;
+		}
+
+		//compare passwd.key to the system key
+		if( (void*)(passwd->key) == (void*)sys_key ){
+			errno = EPERM;
+			return -1;
+		}
+
+		if( memcmp(passwd->key, sys_key, 32) != 0 ){
+			errno = EPERM;
+			sys_setuser();
+
+			//for each wrong guess, the system needs to delay (maybe even force a WDT reset)
+
+			return -1;
+		}
+
+		//assert root flag
+		sys_setroot();
+		return 0;
+#endif
 	}
 	errno = EINVAL;
 	return -1;

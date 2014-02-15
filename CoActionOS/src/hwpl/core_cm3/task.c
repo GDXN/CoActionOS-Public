@@ -51,7 +51,7 @@ int task_init(int interval,
 	system_stack = system_memory + system_memory_size;
 
 	task_table[0].sp = system_stack - sizeof(hw_stack_frame_t);
-	task_table[0].flags = TASK_FLAGS_EXEC | TASK_FLAGS_USED;
+	task_table[0].flags = TASK_FLAGS_EXEC | TASK_FLAGS_USED | TASK_FLAGS_ROOT;
 	task_table[0].pid = 0;
 	task_table[0].reent = _impure_ptr;
 	task_table[0].global_reent = _global_impure_ptr;

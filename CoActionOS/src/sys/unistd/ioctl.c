@@ -11,21 +11,14 @@
 
 #include "config.h"
 
+#include "dev/ioctl.h"
 #include "hwpl.h"
 #include <errno.h>
 #include <stdarg.h>
 #include "unistd_flags.h"
 #include "hwpl/core.h"
+#include "hwdl/sys.h"
 
-
-typedef struct {
-	int err;
-	const sysfs_t * fs;
-	void * handle;
-	int request;
-	void * ctl;
-} priv_attr_t;
-static void priv_ioctl(void * args);
 
 /*! \details This function performs a control request on the device
  * associated with \a fildes. \a request is specific to the device.
@@ -74,17 +67,26 @@ int ioctl(int fildes, int request, ...) {
 
 
 int unistd_device_ioctl(open_file_t * open_file, int request, void * ctl){
-	priv_attr_t args;
+	unistd_priv_attr_t args;
 	args.fs = open_file->fs;
 	args.handle = open_file->handle;
 	args.request = request;
 	args.ctl = ctl;
-	hwpl_core_privcall(priv_ioctl, &args);
+
+#ifdef __SECURE
+	//check to see if root is required for the request
+	if( (args.request & _IOCTL_ROOT) && !sys_isroot() ){
+		errno = EPERM;
+		return -1;
+	}
+#endif
+
+	hwpl_core_privcall(unistd_priv_ioctl, &args);
 	return args.err;
 }
 
-void priv_ioctl(void * args){
-	priv_attr_t * p = (priv_attr_t*)args;
+void unistd_priv_ioctl(void * args){
+	unistd_priv_attr_t * p = (unistd_priv_attr_t*)args;
 	p->err = p->fs->priv_ioctl(
 			p->fs->cfg,
 			p->handle,

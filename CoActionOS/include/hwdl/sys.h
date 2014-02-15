@@ -25,6 +25,7 @@
 #define HWDL_SYS_H_
 
 #include "dev/sys.h"
+#include "hwpl/task.h"
 #include "hwdl.h"
 
 
@@ -70,6 +71,14 @@ int sys_read(const device_cfg_t * cfg, device_transfer_t * rop);
 int sys_write(const device_cfg_t * cfg, device_transfer_t * wop);
 int sys_close(const device_cfg_t * cfg);
 
+extern uint8_t sys_euid;
+
+#define SYS_USER 0
+#define SYS_ROOT 1
+
+#define sys_isroot() ( task_root_asserted( task_get_current() ) )
+#define sys_setuser() ( task_deassert_root( task_get_current() ) )
+#define sys_setroot() ( task_assert_root( task_get_current() ) )
 
 #endif /* HWDL_FIFO_H_ */
 

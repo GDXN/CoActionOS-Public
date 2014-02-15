@@ -11,6 +11,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "dev/ioctl.h"
+
 
 #define HWPL_TEST_BIT(x,y) (x & (1<<y))
 #define HWPL_SET_BIT(x,y) (x |= (1<<y))
@@ -130,7 +132,7 @@ typedef enum {
  *
  * \hideinitializer
  */
-#define I_GLOBAL_SETACTION 2
+#define I_GLOBAL_SETACTION (2 | _IOCTL_ROOT)
 #define I_GLOBAL_CANCEL I_GLOBAL_SETACTION
 
 #define I_GLOBAL_TOTAL 3

@@ -26,6 +26,15 @@ int unistd_get_open_file(int fildes);
 int unistd_fildes_is_bad(int fildes);
 void unistd_reset_fildes(int fildes);
 
+typedef struct {
+	int err;
+	const sysfs_t * fs;
+	void * handle;
+	int request;
+	void * ctl;
+} unistd_priv_attr_t;
+void unistd_priv_ioctl(void * args);
+
 
 static inline void * get_handle(int fildes) HWPL_ALWAYS_INLINE;
 void * get_handle(int fildes){

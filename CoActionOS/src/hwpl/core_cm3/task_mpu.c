@@ -8,6 +8,7 @@
 #include "task_flags.h"
 #include "hwpl/debug.h"
 #include "hwpl/core.h"
+#include "hwdl/sys.h"
 
 static int init_os_memory_protection(task_memories_t * os_mem);
 int task_mpu_calc_protection(task_memories_t * mem);
@@ -113,7 +114,7 @@ int init_os_memory_protection(task_memories_t * os_mem){
 		return err;
 	}
 
-	//Make OS System memory read-only
+	//Make OS System memory read-only -- region 3
 	err = mpu_enable_region(
 			3,
 			&_sys,
@@ -153,6 +154,11 @@ int init_os_memory_protection(task_memories_t * os_mem){
 		return err;
 	}
 
+#if __SECURE
+	//protect the key privileged read -- unprivileged no access -- size is 32 bytes
+
+#endif
+
 	return 0;
 
 }
@@ -170,6 +176,7 @@ int task_mpu_calc_protection(task_memories_t * mem){
 	}
 
 
+	//Region 6
 	err = mpu_calc_region(
 			6,
 			mem->code.addr,
@@ -189,6 +196,7 @@ int task_mpu_calc_protection(task_memories_t * mem){
 	mem->code.addr = (void*)rbar;
 	mem->code.size = rasr;
 
+	//Region 7
 	err = mpu_calc_region(
 			7,
 			mem->data.addr,

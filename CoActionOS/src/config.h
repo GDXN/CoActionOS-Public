@@ -8,8 +8,8 @@
  */
 
 /*! \brief Version \showinitializer */
-#define VERSION "1.3.1"
-#define BCDVERSION 0x131
+#define VERSION "1.3.2"
+#define BCDVERSION 0x132
 
 /*! @} */
 

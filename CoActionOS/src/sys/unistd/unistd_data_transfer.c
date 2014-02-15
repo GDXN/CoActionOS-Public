@@ -106,6 +106,17 @@ void priv_device_data_transfer(void * args){
 	_hwpl_core_priv_enable_interrupts(NULL);
 }
 
+void unistd_clr_action(open_file_t * open_file){
+	unistd_priv_attr_t args;
+	hwpl_action_t action;
+	args.fs = open_file->fs;
+	args.handle = open_file->handle;
+	args.request = I_GLOBAL_SETACTION;
+	args.ctl = &action;
+	action.callback = 0;
+	hwpl_core_privcall(unistd_priv_ioctl, &args);
+}
+
 
 int unistd_device_read(open_file_t * open_file, void * buf, int nbyte){
 	return device_data_transfer(open_file, buf, nbyte, 1);
@@ -119,7 +130,6 @@ int device_data_transfer(open_file_t * open_file, void * buf, int nbyte, int rea
 	int tmp;
 	int mode;
 	priv_device_data_transfer_t args;
-	hwpl_action_t action;
 
 	if ( nbyte == 0 ){
 		return 0;
@@ -157,11 +167,7 @@ int device_data_transfer(open_file_t * open_file, void * buf, int nbyte, int rea
 		//We arrive here if the data is done transferring or there is no data to transfer and O_NONBLOCK is set
 		//or if there was an error
 		if( sched_get_unblock_type(task_get_current()) == SCHED_UNBLOCK_SIGNAL ){
-
-			//This needs to make sure the device is freed -- ie no longer waiting for this thread
-			action.callback = 0;
-			unistd_device_ioctl(open_file, I_GLOBAL_SETACTION, &action);
-
+			unistd_clr_action(open_file);
 			errno = EINTR;
 			return -1;
 		}

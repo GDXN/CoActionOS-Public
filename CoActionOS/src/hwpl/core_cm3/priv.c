@@ -1,5 +1,6 @@
 #include "hwpl.h"
 #include "hwpl/core.h"
+#include "hwdl/sys.h"
 
 void hwpl_core_privcall(core_privcall_t call, void * args) HWPL_WEAK;
 
@@ -14,7 +15,19 @@ void _hwpl_core_svcall_handler(void){
 	asm volatile ("MRS %0, psp\n\t" : "=r" (frame) );
 	call = (core_privcall_t)frame[0];
 	args = (void*)(frame[1]);
+
+#ifdef __SECURE
+	register uint32_t caller;
+	caller = frame[5];
+	//check if euid is root OR the call is made within the OS
+	if( sys_isroot() ||
+		((caller >= (uint32_t)&_text) && (caller < (uint32_t)&_etext)) ){
+		call(args);
+	}
+#else
 	call(args);
+#endif
+
 }
 
 void _hwpl_core_priv_reset(void * args){

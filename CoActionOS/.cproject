@@ -8,16 +8,16 @@
 				<macros>
 					<stringMacro name="POSTPROCESS_win64" type="VALUE_TEXT" value="${POSTPROCESS_win32}"/>
 					<stringMacro name="TOOLSPATH_linux" type="VALUE_TEXT" value="${TOOLSPATH_macosx}"/>
-					<stringMacro name="POSTPROCESS_macosx" type="VALUE_TEXT" value="${ProjDirPath}/script/post-process.sh"/>
 					<stringMacro name="RM_linux" type="VALUE_TEXT" value="${RM_macosx}"/>
+					<stringMacro name="POSTPROCESS_macosx" type="VALUE_TEXT" value="${ProjDirPath}/script/post-process.sh"/>
 					<stringMacro name="CXX_win64" type="VALUE_TEXT" value="${CXX_win32}"/>
-					<stringMacro name="INSTALLPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
 					<stringMacro name="CC_linux" type="VALUE_TEXT" value="gcc"/>
+					<stringMacro name="INSTALLPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
 					<stringMacro name="POSTPROCESS_linux" type="VALUE_TEXT" value="${POSTPROCESS_macosx}"/>
-					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
-					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
+					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="FLAGS" type="VALUE_TEXT" value="${FLAGS_${OsType}}"/>
+					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="."/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\Qt\Qt5.1.0\Tools\mingw48_32"/>
@@ -42,16 +42,16 @@
 					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="CXX_win32" type="VALUE_TEXT" value="g++"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
-					<stringMacro name="ARCH" type="VALUE_TEXT" value="link"/>
 					<stringMacro name="CXX_linux" type="VALUE_TEXT" value="g++"/>
+					<stringMacro name="ARCH" type="VALUE_TEXT" value="link"/>
 					<stringMacro name="CC" type="VALUE_TEXT" value="${CC_${OsType}}"/>
-					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="CXX" type="VALUE_TEXT" value="${CXX_${OsType}}"/>
+					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="CC_win64" type="VALUE_TEXT" value="${CC_win32}"/>
-					<stringMacro name="INSTALLPATH_macosx" type="VALUE_TEXT" value="${TOOLSPATH_macosx}"/>
-					<stringMacro name="INSTALLPATH_linux" type="VALUE_TEXT" value="${INSTALLPATH_macosx}"/>
 					<stringMacro name="FLAGS_macosx" type="VALUE_TEXT" value=""/>
+					<stringMacro name="INSTALLPATH_linux" type="VALUE_TEXT" value="${INSTALLPATH_macosx}"/>
+					<stringMacro name="INSTALLPATH_macosx" type="VALUE_TEXT" value="${TOOLSPATH_macosx}"/>
 				</macros>
 				<externalSettings>
 					<externalSetting>
@@ -720,19 +720,129 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139" moduleId="org.eclipse.cdt.core.settings" name="Release_CoActionOS_Secure_lpc17xx">
+				<macros>
+					<stringMacro name="POSTPROCESS_win64" type="VALUE_TEXT" value="${POSTPROCESS_win32}"/>
+					<stringMacro name="TOOLSPATH_linux" type="VALUE_TEXT" value="${TOOLSPATH_macosx}"/>
+					<stringMacro name="RM_linux" type="VALUE_TEXT" value="${RM_macosx}"/>
+					<stringMacro name="POSTPROCESS_macosx" type="VALUE_TEXT" value="${ProjDirPath}/script/post-process.sh"/>
+					<stringMacro name="TEST_BUILDVAR" type="VALUE_TEXT" value="VALUE"/>
+					<stringMacro name="RM_win32" type="VALUE_TEXT" value="../script/clean.bat"/>
+					<stringMacro name="POSTPROCESS_linux" type="VALUE_TEXT" value="${POSTPROCESS_macosx}"/>
+					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
+					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
+					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
+					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
+					<stringMacro name="ARCH" type="VALUE_TEXT" value="lpc17xx"/>
+					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
+					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
+					<stringMacro name="RM_macosx" type="VALUE_TEXT" value="rm -rf"/>
+					<stringMacro name="TOOLSPATH_macosx" type="VALUE_TEXT" value="/usr/local/CoActionOS"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/CoActionOS"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/CoActionOS/Release_CoActionOS_Secure_lpc17xx"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="CoActionOS" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="${RM}" description="" errorParsers="org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139" name="Release_CoActionOS_Secure_lpc17xx" parent="cdt.managedbuild.config.gnu.cross.lib.release" postannouncebuildStep="" postbuildStep="${POSTPROCESS} ${TOOLSPATH} ${HOST} ${ARCH}_secure ${ProjDirPath}" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139." name="/" resourcePath="">
+						<toolChain errorParsers="" id="cdt.managedbuild.toolchain.gnu.cross.lib.release.629615782" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.lib.release">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.159853176" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${HOST}-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.2031458434" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value=" ${PathDelimiter}${TOOLSPATH}/bin" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.163783508" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/CoActionOS}/Release_CoActionOS_lpc17xx" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.1643462260" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release_CoActionOS_link"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release_hwpl_lpc13xx"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release_CoActionOS_lpc17xx"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release_crt"/>
+								</outputEntries>
+							</builder>
+							<tool command="gcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.tool.gnu.cross.c.compiler.1425165079" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.331409942" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.202455480" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.other.1702940111" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c  -fno-exceptions -fno-unwind-tables -ffunction-sections" valueType="string"/>
+								<option id="gnu.c.compiler.option.include.paths.1858154376" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/include/dev_sys}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.886568327" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__CoActionOS__"/>
+									<listOptionValue builtIn="false" value="__SECURE"/>
+									<listOptionValue builtIn="false" value="__lpc17xx"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1012475438" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1106074560" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1936849909" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.size" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.721998830" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.1171691996" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fno-rtti -fno-exceptions -fno-threadsafe-statics -fno-unwind-tables -ffunction-sections" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.include.paths.1516343358" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/CoActionOS/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/CoActionOS/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/CoActionOS/include/dev_sys}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1005458463" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__CoActionOS__"/>
+									<listOptionValue builtIn="false" value="__lpc17xx"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1207159683" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.387559183" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.374587168" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool command="ar" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}caos_${ARCH}_secure.a ${INPUTS}" errorParsers="" id="cdt.managedbuild.tool.gnu.cross.archiver.21301235" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool command="as" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.tool.gnu.cross.assembler.1508543023" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.1723938302" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/CoActionOS/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/CoActionOS/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CoActionOS/CoActionOS/include/dev_sys}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1589225694" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/hwdl"/>
+						<entry excluding="task_single.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/hwpl/core_cm3"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/hwpl/lpc17xx"/>
+						<entry excluding="emc.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src/hwpl/share"/>
+						<entry excluding="cafs_lite/tests.c|cafs_lite/test_file.c|cafs_lite/test_dir.c|cafs_lite/sim_device.h|cafs_lite/sim_dev.c|cafs_lite/main.c|cafs_lite/cafs_lite_tp.c|cafs_lite/tests.h|cafs_lite/cafs_lite_diag.c|cafs_lite/sysfs.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/sys"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="CoActionOS.null.1908724010" name="CoActionOS"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug_CoActionOS_lpc17xx"/>
 		<configuration configurationName="Release_crt">
 			<resource resourceType="PROJECT" workspacePath="/CoActionOS"/>
 		</configuration>
 		<configuration configurationName="Release_CoActionOS_lpc177x_8x">
 			<resource resourceType="PROJECT" workspacePath="/CoActionOS"/>
 		</configuration>
+		<configuration configurationName="Debug_CoActionOS_lpc177x_8x"/>
 		<configuration configurationName="Release_hwpl_lpc13xx">
+			<resource resourceType="PROJECT" workspacePath="/CoActionOS"/>
+		</configuration>
+		<configuration configurationName="Release_CoActionOS_Secure_lpc17xx">
 			<resource resourceType="PROJECT" workspacePath="/CoActionOS"/>
 		</configuration>
 		<configuration configurationName="Release_CoActionOS_link">
@@ -750,26 +860,8 @@
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.808127882;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.808127882.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.448978849;cdt.managedbuild.tool.gnu.cpp.compiler.input.752882593">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.570579404;cdt.managedbuild.tool.gnu.cpp.compiler.input.214769039">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1735733544;cdt.managedbuild.tool.gnu.cpp.compiler.input.351359673">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1231350022;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.1231350022.;cdt.managedbuild.tool.gnu.cross.c.compiler.715150599;cdt.managedbuild.tool.gnu.c.compiler.input.933526999">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.421258237;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.421258237.;cdt.managedbuild.tool.gnu.cross.c.compiler.1754219706;cdt.managedbuild.tool.gnu.c.compiler.input.599409882">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968.;cdt.managedbuild.tool.gnu.cross.c.compiler.1514694444;cdt.managedbuild.tool.gnu.c.compiler.input.1458454793">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122.;cdt.managedbuild.tool.gnu.cross.c.compiler.2044840846;cdt.managedbuild.tool.gnu.c.compiler.input.678909866">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1574506209;cdt.managedbuild.tool.gnu.cpp.compiler.input.318118393">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
@@ -805,6 +897,33 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122.2087154548;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122.2087154548.;cdt.managedbuild.tool.gnu.cross.c.compiler.1404434251;cdt.managedbuild.tool.gnu.c.compiler.input.274904783">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.1767680908">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.;cdt.managedbuild.tool.gnu.cross.c.compiler.1196788780;cdt.managedbuild.tool.gnu.c.compiler.input.1619282540">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.808127882;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.808127882.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.448978849;cdt.managedbuild.tool.gnu.cpp.compiler.input.752882593">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.570579404;cdt.managedbuild.tool.gnu.cpp.compiler.input.214769039">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1735733544;cdt.managedbuild.tool.gnu.cpp.compiler.input.351359673">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.421258237;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.421258237.;cdt.managedbuild.tool.gnu.cross.c.compiler.1754219706;cdt.managedbuild.tool.gnu.c.compiler.input.599409882">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.1116918968.;cdt.managedbuild.tool.gnu.cross.c.compiler.1514694444;cdt.managedbuild.tool.gnu.c.compiler.input.1458454793">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.2143011122.;cdt.managedbuild.tool.gnu.cross.c.compiler.2044840846;cdt.managedbuild.tool.gnu.c.compiler.input.678909866">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139.;cdt.managedbuild.tool.gnu.cross.c.compiler.1425165079;cdt.managedbuild.tool.gnu.c.compiler.input.1012475438">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.linuxtools.cdt.autotools.core.configuration.build.2660975;org.eclipse.linuxtools.cdt.autotools.core.configuration.build.2660975.;org.eclipse.linuxtools.cdt.autotools.core.toolchain.tool.gcc.264051173;cdt.managedbuild.tool.gnu.c.compiler.input.227686377">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 			<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
@@ -824,17 +943,14 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1328578028;cdt.managedbuild.tool.gnu.cpp.compiler.input.1627441607">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="0.1767680908">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.;cdt.managedbuild.tool.gnu.cross.c.compiler.2129619795;cdt.managedbuild.tool.gnu.c.compiler.input.70477560">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.421258237;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.421258237.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1828423164;cdt.managedbuild.tool.gnu.cpp.compiler.input.1888236564">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.805071271.;cdt.managedbuild.tool.gnu.cross.c.compiler.1196788780;cdt.managedbuild.tool.gnu.c.compiler.input.1619282540">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139;cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794.652448319.182969139.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1106074560;cdt.managedbuild.tool.gnu.cpp.compiler.input.1207159683">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

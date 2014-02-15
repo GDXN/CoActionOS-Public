@@ -16,6 +16,7 @@ extern "C" {
 #define TASK_FLAGS_IS_THREAD (1<<11)
 #define TASK_FLAGS_IS_FIFO (1<<12)
 #define TASK_FLAGS_YIELD (1<<13)
+#define TASK_FLAGS_ROOT (1<<14)
 #define TASK_FLAGS_PARENT(x) ( (x & 0xFFFF) << 16 )
 
 #define TASK_FLAGS_GET_PARENT(flags) ( flags >> 16 )
@@ -52,6 +53,21 @@ void task_assert_exec(int id){
 static inline int task_exec_asserted(int id) HWPL_ALWAYS_INLINE;
 int task_exec_asserted(int id){
 	return ( (task_table[id].flags & (TASK_FLAGS_EXEC)) ==  TASK_FLAGS_EXEC);
+}
+
+static inline void task_deassert_root(int id) HWPL_ALWAYS_INLINE;
+void task_deassert_root(int id){
+	task_table[id].flags &= ~(TASK_FLAGS_ROOT);
+}
+
+static inline void task_assert_root(int id) HWPL_ALWAYS_INLINE;
+void task_assert_root(int id){
+	task_table[id].flags |= (TASK_FLAGS_ROOT);
+}
+
+static inline int task_root_asserted(int id) HWPL_ALWAYS_INLINE;
+int task_root_asserted(int id){
+	return ( (task_table[id].flags & (TASK_FLAGS_ROOT)) ==  TASK_FLAGS_ROOT);
 }
 
 static inline void task_deassert_yield(int id) HWPL_ALWAYS_INLINE;

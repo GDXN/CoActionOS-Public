@@ -20,6 +20,7 @@
 #define DEV_SYS_H_
 
 #include <stdint.h>
+#include <sys/syslimits.h>
 #include "ioctl.h"
 
 #include "hwpl/types.h"
@@ -138,16 +139,6 @@ extern "C" {
 
 #define SYS_IOC_CHAR 's'
 
-/*! \brief Flags in \a security (member of \ref sys_attr_t).
- */
-typedef enum {
-	SYS_SECURITY_RESET /*! Allows desktop interface to reset the device */ = (1<<0),
-	SYS_SECURITY_INVOKEBOOTLOADER /*! Allows desktop interface to invoke the bootloader (can always be invoked manually) */ = (1<<1),
-	SYS_SECURITY_READFLASH /*! Allows desktop interface to read the flash memory (where OS and application binaries are stored) */ = (1<<2),
-	SYS_SECURITY_APPINSTALL /*! \brief Allows desktop interface to install custom applications (warning: custom applications can get around security) */ =  (1<<3)
-} sys_security_flags_t;
-
-
 /*! \details This structure defines the system attributes.
  *
  */
@@ -211,9 +202,8 @@ typedef struct HWPL_PACK {
  * to certain parts of the device.
  */
 typedef struct HWPL_PACK {
-	char key[32] /*! \brief The password used to unlock the device */;
-	uint32_t status /*! \brief The status of the lock after using \a key */;
-} sys_lock_t;
+	uint8_t key[32] /*! \brief The password used to unlock the device */;
+} sys_sudo_t;
 
 /*! \brief See below.
  * \details This request applies the software write protect
@@ -272,32 +262,23 @@ typedef struct HWPL_PACK {
 #define I_SYS_GETPROCESS _IOCTLRW(SYS_IOC_CHAR, 4, sys_process_t)
 
 /*! \brief See below for details
- * \details This request unlocks the device.  When unlocked, all
- * operations are available (the security word has no effect).
+ * \details This request temporarily changes the effective user ID to root.
+ * As root certain system functions are available that would not available to
+ * the user.  For example, as root, an application can set an interrupt callback
+ * that is executed in privileged mode.
  *
  * \code
- * sys_lock_t lock;
- * strcpy(lock.key, "the passord");
- * ioctl(fd, I_SYS_UNLOCK, &lock);
- * if( lock.status == 0 ){
- * 	//device is still locked
+ * sys_sudo_t passwd;
+ * strcpy(passwd.key, "the password");
+ * if( ioctl(fd, I_SYS_SUDO, &passwd) < 0 ){
+ * 	//failed to accept password
  * }
  * \endcode
  */
-#define I_SYS_UNLOCK _IOCTLRW(SYS_IOC_CHAR, 5, sys_lock_t)
+#define I_SYS_SUDO _IOCTLW(SYS_IOC_CHAR, 5, sys_sudo_t)
 
 
-/*! \brief See below for details
- * \details This request locks the device.  When locked, certain operations
- * are disabled based on the value of \a security in \ref sys_attr_t;
- *
- * \code
- * ioctl(fd, I_SYS_LOCK);
- * \endcode
- */
-#define I_SYS_LOCK _IOCTL(SYS_IOC_CHAR, 6)
-
-#define I_SYS_TOTAL 7
+#define I_SYS_TOTAL 6
 
 #define LED_IOC_CHAR 'l'
 #define LED_ACTIVE_LOW 0
