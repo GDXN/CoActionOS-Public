@@ -37,6 +37,13 @@ extern "C" {
 #define HWPL_PACK __attribute__((packed))
 #define HWPL_NAKED __attribute__((naked))
 
+
+/*! \details This macro aligns memory to a boundary
+ *
+ * @param x Memory alignment
+ */
+#define HWPL_ALIGN(x) __attribute__((aligned (x)))
+
 /*! \details This macro is used to specify functions
  * which are always inline
  */

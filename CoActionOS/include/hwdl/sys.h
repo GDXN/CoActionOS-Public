@@ -26,6 +26,7 @@
 
 #include "dev/sys.h"
 #include "hwpl/task.h"
+#include "hwpl/types.h"
 #include "hwdl.h"
 
 
@@ -79,6 +80,11 @@ extern uint8_t sys_euid;
 #define sys_isroot() ( task_root_asserted( task_get_current() ) )
 #define sys_setuser() ( task_deassert_root( task_get_current() ) )
 #define sys_setroot() ( task_assert_root( task_get_current() ) )
+
+#ifdef __SECURE
+extern const char sys_key[32] HWPL_ALIGN(32);
+#endif
+
 
 #endif /* HWDL_FIFO_H_ */
 

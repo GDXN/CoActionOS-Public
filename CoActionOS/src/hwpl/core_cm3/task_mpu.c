@@ -114,9 +114,9 @@ int init_os_memory_protection(task_memories_t * os_mem){
 		return err;
 	}
 
-	//Make OS System memory read-only -- region 3
+	//Make OS System memory read-only -- region 0
 	err = mpu_enable_region(
-			3,
+			0,
 			&_sys,
 			(char*)&_esys - (char*)&_sys,
 			MPU_ACCESS_PRW_UR,
@@ -128,9 +128,9 @@ int init_os_memory_protection(task_memories_t * os_mem){
 	}
 
 
-	//Make the OS flash executable and readable -- region 4
+	//Make the OS flash executable and readable -- region 3
 	err = mpu_enable_region(
-			4,
+			3,
 			os_mem->code.addr,
 			os_mem->code.size,
 			MPU_ACCESS_PR_UR,
@@ -140,6 +140,20 @@ int init_os_memory_protection(task_memories_t * os_mem){
 	if ( err < 0 ){
 		return err;
 	}
+
+#ifdef __SECURE
+	err = mpu_enable_region(
+			4,
+			(void*)sys_key,
+			32,
+			MPU_ACCESS_PR,
+			MPU_MEMORY_FLASH,
+			true
+	);
+	if ( err < 0 ){
+		return err;
+	}
+#endif
 
 	//Make the OS shared memory R/W -- region 5
 	err = mpu_enable_region(
@@ -153,11 +167,6 @@ int init_os_memory_protection(task_memories_t * os_mem){
 	if ( err < 0 ){
 		return err;
 	}
-
-#if __SECURE
-	//protect the key privileged read -- unprivileged no access -- size is 32 bytes
-
-#endif
 
 	return 0;
 

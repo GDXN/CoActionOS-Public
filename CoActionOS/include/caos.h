@@ -509,7 +509,6 @@ typedef struct {
  */
 int signal_callback(void * context, const void * data);
 
-
 #ifdef __cplusplus
 }
 #endif

@@ -10,7 +10,8 @@
 int mpu_dev_init(void){
 	int err;
 
-	//Peripherals Regions 0 up to 2
+	//Peripherals Regions 0 and 1
+	/*
 	err = mpu_enable_region(
 			0,
 			(void*)0x2009C000,  //GPIO Access
@@ -23,6 +24,7 @@ int mpu_dev_init(void){
 	if ( err < 0 ){
 		return err;
 	}
+	*/
 
 	err = mpu_enable_region(
 			1,
@@ -37,20 +39,6 @@ int mpu_dev_init(void){
 		return err;
 	}
 
-	/*
-	err = mpu_enable_region(
-			2,
-			(void*)0x50000000,  //APB/AHB Peripherals
-			0x501FFFFF + 1 - 0x50000000,
-			MPU_ACCESS_PRW_URW,
-			MPU_MEMORY_PERIPHERALS,
-			false
-	);
-
-	if ( err < 0 ){
-		return err;
-	}
-	*/
 
 	return 0;
 }
