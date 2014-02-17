@@ -70,8 +70,6 @@ int usb_dev_init(const void * dev_desc /*! A pointer to the device descriptor */
 
 	hwpl_usb_attach(USBDEV_PORT, NULL);
 
-	usb_dev_assert_connect();
-
 	return 0;
 }
 

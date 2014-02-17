@@ -23,6 +23,8 @@
 
 #include <stdint.h>
 
+#if 0
+
 /* define compiler specific symbols */
 #if defined ( __CC_ARM   )
   #define __ASM            __asm                                      /*!< asm keyword for ARM Compiler          */
@@ -733,7 +735,7 @@ uint32_t __STREXB(uint8_t value, uint8_t *addr)
 {
    uint32_t result=0;
   
-   //__ASM volatile ("strexb %0, %2, [%1]" : "=r" (result) : "r" (addr), "r" (value) );
+   __ASM volatile ("strexb %0, %2, [%1]" : "=&r" (result) : "r" (addr), "r" (value) );
    return(result);
 }
 
@@ -750,7 +752,7 @@ uint32_t __STREXH(uint16_t value, uint16_t *addr)
 {
    uint32_t result=0;
   
-   //__ASM volatile ("strexh %0, %2, [%1]" : "=r" (result) : "r" (addr), "r" (value) );
+   __ASM volatile ("strexh %0, %2, [%1]" : "=&r" (result) : "r" (addr), "r" (value) );
    return(result);
 }
 
@@ -780,5 +782,7 @@ uint32_t __STREXW(uint32_t value, uint32_t *addr)
  * Please use "carm -?i" to get an up to date list of all instrinsics,
  * Including the CMSIS ones.
  */
+
+#endif
 
 #endif

@@ -190,6 +190,11 @@ void link_cmd_ioctl(link_data_t * args){
 		break;
 	case I_BOOTLOADER_WRITEPAGE:
 
+#ifdef __SECURE
+		//decrypt incoming data
+
+#endif
+
 		err = link_protocol_slaveread(phy_handle, &wattr, size, NULL, NULL);
 		if( err < 0 ){
 			dstr("failed to read data\n");

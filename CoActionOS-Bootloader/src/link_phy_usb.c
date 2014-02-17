@@ -236,6 +236,8 @@ link_phy_t link_phy_open(const char * name, int baudrate){
 	attr.mode = PIO_MODE_OUTPUT | PIO_MODE_DIRONLY;
 	pio_setattr(USBDEV_CONNECT_PORT, &attr);
 
+	_delay_ms(100);
+
 	dstr("OPEN USB\n");
 	//open USB
 	usb_open(port);
@@ -253,6 +255,8 @@ link_phy_t link_phy_open(const char * name, int baudrate){
 	dstr("USB ATTR SET\n");
 	//initialize USB device
 	usb_dev_init(&link_dev_desc, &link_cfg_desc, &link_string_desc);
+
+	pio_setmask(USBDEV_CONNECT_PORT, (1<<USBDEV_CONNECT_PIN));
 
 	dstr("WAIT INIT USB\n");
 	while( usb_isconnected(USBDEV_PORT) == 0 ){

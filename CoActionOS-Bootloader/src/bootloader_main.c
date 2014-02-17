@@ -17,15 +17,17 @@
 
 #define USB_DEV_DFU_TRANSFER_SIZE 1024
 
-#if USE_ENCRYPTION == 1
-#include <aes.h>
+#ifdef __SECURE
+#include <applib/aes256.h>
 
 const unsigned char key[32] = {
-		ENCRYPTION_KEY
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
 char decrypt_buf[USB_DEV_DFU_TRANSFER_SIZE];
-aes_decrypt_ctx ctx_de[1];
 #endif
 
 const pio_t gled = { .port = GLED_PORT, .pin = GLED_PIN };
@@ -188,13 +190,6 @@ void init_hw(void){
 }
 
 
-
-
-/*
-void hwpl_core_privcall(core_priv_call_t call, void * args){
-	call(args);
-}
- */
 
 char htoc(int nibble){
 	if ( nibble >= 0 && nibble < 10 ){
