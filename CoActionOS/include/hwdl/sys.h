@@ -81,9 +81,6 @@ extern uint8_t sys_euid;
 #define sys_setuser() ( task_deassert_root( task_get_current() ) )
 #define sys_setroot() ( task_assert_root( task_get_current() ) )
 
-#ifdef __SECURE
-extern const char sys_key[32] HWPL_ALIGN(32);
-#endif
 
 
 #endif /* HWDL_FIFO_H_ */

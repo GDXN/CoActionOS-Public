@@ -37,17 +37,6 @@ static void stall(void){
 	usb_dev_std_ep0_data.cnt = 0;
 }
 
-
-#ifdef __SECURE
-static void super_user(void * args){
-	if( args != 0 ){
-		sys_setroot();
-	} else {
-		sys_setuser();
-	}
-}
-#endif
-
 /*! \details This function initializes the USB device configuration.
  */
 int usb_dev_init(int usb_fd,
@@ -79,29 +68,15 @@ int usb_dev_init(int usb_fd,
 	action.callback = usb_dev_std_setup;
 	action.event = USB_EVENT_DATA_READY;
 
-#ifdef __SECURE
-	hwpl_core_privcall(super_user, (void*)1);
-#endif
-
 	ret = ioctl(usb_fd, I_USB_SETACTION, &action);
 	if( ret < 0 ){
-#ifdef __SECURE
-		hwpl_core_privcall(super_user, (void*)0);
-#endif
 		return -1;
 	}
 
 	action.event = USB_EVENT_WRITE_COMPLETE;
 	if ( ioctl(usb_fd, I_USB_SETACTION, &action) < 0 ){
-#ifdef __SECURE
-		hwpl_core_privcall(super_user, (void*)0);
-#endif
 		return -1;
 	}
-
-#ifdef __SECURE
-		hwpl_core_privcall(super_user, (void*)0);
-#endif
 
 	//Attach the USB
 	if ( ioctl(usb_fd, I_USB_ATTACH, NULL) < 0 ){

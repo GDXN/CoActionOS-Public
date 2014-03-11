@@ -141,20 +141,6 @@ int init_os_memory_protection(task_memories_t * os_mem){
 		return err;
 	}
 
-#ifdef __SECURE
-	err = mpu_enable_region(
-			4,
-			(void*)sys_key,
-			32,
-			MPU_ACCESS_PR,
-			MPU_MEMORY_FLASH,
-			true
-	);
-	if ( err < 0 ){
-		return err;
-	}
-#endif
-
 	//Make the OS shared memory R/W -- region 5
 	err = mpu_enable_region(
 			5,

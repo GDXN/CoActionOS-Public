@@ -58,13 +58,6 @@ int hwpl_ioctl(const device_cfg_t * cfg,
 
 	periph_request = _IOCTL_NUM(request);
 
-#ifdef __SECURE
-	if( (periph_request == _IOCTL_NUM(I_GLOBAL_SETACTION)) && !sys_isroot() ){
-		errno = EPERM;
-		return -1;
-	}
-#endif
-
 	if ( periph_request < ioctl_func_table_size ) {
 		return ioctl_func_table[periph_request](GET_PORT(), ctl);
 	}
