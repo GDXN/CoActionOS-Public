@@ -30,9 +30,7 @@ static int startup_fs(void);
 
 void priv_check_reset_source(void * args){
 	core_attr_t attr;
-
 	hwpl_core_getattr(0, &attr);
-
 	switch(attr.reset_type){
 	case CORE_RESET_SRC_WDT:
 		hwpl_priv_debug("wdt rst\n");
