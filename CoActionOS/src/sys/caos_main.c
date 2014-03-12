@@ -13,7 +13,6 @@
 #include "hwpl.h"
 #include "hwpl/core.h"
 
-
 #include "caos.h"
 #include "sched/sched_flags.h"
 
