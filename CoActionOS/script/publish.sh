@@ -58,6 +58,8 @@ cd ..
 
 
 cd $WORKSPACE
+cd ..
+cd CoActionOS-Desktop
 
 cd CoActionOS-Link/build
 ../deploy $VERSION

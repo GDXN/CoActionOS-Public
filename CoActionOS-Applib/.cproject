@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794" moduleId="org.eclipse.cdt.core.settings" name="Release_CoActionOS_link">
@@ -20,7 +18,7 @@
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="."/>
-					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\Qt\Qt5.1.0\Tools\mingw48_32"/>
+					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\Qt\Tools\mingw48_32"/>
 					<stringMacro name="CC_win32" type="VALUE_TEXT" value="i686-w64-mingw32-gcc"/>
 					<stringMacro name="RM_macosx" type="VALUE_TEXT" value="rm -rf"/>
 					<stringMacro name="CCFLAGS_macosx" type="VALUE_TEXT" value="-m64 -arch x86_64 -mmacosx-version-min=10.6"/>
@@ -50,9 +48,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -143,8 +141,8 @@
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -164,9 +162,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -251,8 +249,8 @@
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -272,9 +270,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -359,8 +357,8 @@
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -381,9 +379,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -466,8 +464,8 @@
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -487,9 +485,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -574,8 +572,8 @@
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -595,9 +593,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -680,8 +678,8 @@
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
+					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -702,9 +700,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -787,8 +785,8 @@
 					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
-					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
+					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="arm-cm3-eabi"/>
 					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
@@ -808,9 +806,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">

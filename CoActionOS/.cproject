@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.lib.release.388924090.1536021794" moduleId="org.eclipse.cdt.core.settings" name="Release_CoActionOS_link">
 				<macros>
 					<stringMacro name="POSTPROCESS_win64" type="VALUE_TEXT" value="${POSTPROCESS_win32}"/>
 					<stringMacro name="TOOLSPATH_linux" type="VALUE_TEXT" value="${TOOLSPATH_macosx}"/>
-					<stringMacro name="RM_linux" type="VALUE_TEXT" value="${RM_macosx}"/>
 					<stringMacro name="POSTPROCESS_macosx" type="VALUE_TEXT" value="${ProjDirPath}/script/post-process.sh"/>
+					<stringMacro name="RM_linux" type="VALUE_TEXT" value="${RM_macosx}"/>
 					<stringMacro name="CXX_win64" type="VALUE_TEXT" value="${CXX_win32}"/>
-					<stringMacro name="CC_linux" type="VALUE_TEXT" value="gcc"/>
 					<stringMacro name="INSTALLPATH_win32" type="VALUE_TEXT" value="C:\CoActionOS-Compiler\CoActionOS"/>
+					<stringMacro name="CC_linux" type="VALUE_TEXT" value="gcc"/>
 					<stringMacro name="POSTPROCESS_linux" type="VALUE_TEXT" value="${POSTPROCESS_macosx}"/>
-					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="INSTALLPATH" type="VALUE_TEXT" value="${INSTALLPATH_${OsType}}"/>
-					<stringMacro name="FLAGS" type="VALUE_TEXT" value="${FLAGS_${OsType}}"/>
+					<stringMacro name="TOOLSPATH" type="VALUE_TEXT" value="${TOOLSPATH_${OsType}}"/>
 					<stringMacro name="RM" type="VALUE_TEXT" value="${RM_${OsType}}"/>
+					<stringMacro name="FLAGS" type="VALUE_TEXT" value="${FLAGS_${OsType}}"/>
 					<stringMacro name="RM_win64" type="VALUE_TEXT" value="${RM_win32}"/>
 					<stringMacro name="HOST" type="VALUE_TEXT" value="."/>
-					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\Qt\Qt5.1.0\Tools\mingw48_32"/>
+					<stringMacro name="TOOLSPATH_win32" type="VALUE_TEXT" value="C:\Qt\Tools\mingw48_32"/>
 					<stringMacro name="CC_win32" type="VALUE_TEXT" value="gcc"/>
 					<stringMacro name="FLAGS_win32" type="VALUE_TEXT" value="-mno-ms-bitfields"/>
 					<stringMacro name="RM_macosx" type="VALUE_TEXT" value="rm -rf"/>
@@ -42,16 +40,16 @@
 					<stringMacro name="INSTALLPATH_win64" type="VALUE_TEXT" value="${INSTALLPATH_win32}"/>
 					<stringMacro name="CXX_win32" type="VALUE_TEXT" value="g++"/>
 					<stringMacro name="TOOLSPATH_win64" type="VALUE_TEXT" value="${TOOLSPATH_win32}"/>
-					<stringMacro name="CXX_linux" type="VALUE_TEXT" value="g++"/>
 					<stringMacro name="ARCH" type="VALUE_TEXT" value="link"/>
+					<stringMacro name="CXX_linux" type="VALUE_TEXT" value="g++"/>
 					<stringMacro name="CC" type="VALUE_TEXT" value="${CC_${OsType}}"/>
-					<stringMacro name="CXX" type="VALUE_TEXT" value="${CXX_${OsType}}"/>
 					<stringMacro name="POSTPROCESS" type="VALUE_TEXT" value="${POSTPROCESS_${OsType}}"/>
+					<stringMacro name="CXX" type="VALUE_TEXT" value="${CXX_${OsType}}"/>
 					<stringMacro name="POSTPROCESS_win32" type="VALUE_TEXT" value="../script/post-process.bat"/>
 					<stringMacro name="CC_win64" type="VALUE_TEXT" value="${CC_win32}"/>
-					<stringMacro name="FLAGS_macosx" type="VALUE_TEXT" value=""/>
-					<stringMacro name="INSTALLPATH_linux" type="VALUE_TEXT" value="${INSTALLPATH_macosx}"/>
 					<stringMacro name="INSTALLPATH_macosx" type="VALUE_TEXT" value="${TOOLSPATH_macosx}"/>
+					<stringMacro name="INSTALLPATH_linux" type="VALUE_TEXT" value="${INSTALLPATH_macosx}"/>
+					<stringMacro name="FLAGS_macosx" type="VALUE_TEXT" value=""/>
 				</macros>
 				<externalSettings>
 					<externalSetting>
@@ -62,9 +60,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -154,9 +152,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -244,9 +242,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -348,9 +346,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -434,9 +432,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -539,9 +537,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -644,9 +642,9 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">

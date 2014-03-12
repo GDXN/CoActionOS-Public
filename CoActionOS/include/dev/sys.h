@@ -20,7 +20,6 @@
 #define DEV_SYS_H_
 
 #include <stdint.h>
-#include <sys/syslimits.h>
 #include "ioctl.h"
 
 #include "hwpl/types.h"
